@@ -11,8 +11,15 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react'},
-            {test: /\.html$/,loader: "file?name=[name].[ext]"}
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loaders: ['react-hot', 'babel-loader?presets[]=es2015&presets[]=react']
+            },
+            {
+                test: /\.html$/,
+                loader: "file?name=[name].[ext]"
+            }
         ]
     }
 }
